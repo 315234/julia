@@ -4678,7 +4678,7 @@ static void emit_function(jl_lambda_info_t *lam, jl_llvm_functions_t *declaratio
     Value *sp_ok =
         builder.CreateICmpUGT(cur_sp,
                               ConstantInt::get(T_size,
-                                               (uptrint_t)jl_stack_lo));
+                                               (uintptr_t)jl_stack_lo));
     error_unless(sp_ok, "stack overflow", &ctx);
     */
 
